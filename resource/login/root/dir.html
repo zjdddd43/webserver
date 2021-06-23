@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign in</title>
+    </head>
+    <body>
+<br/>
+<br/>
+    <div align="center">
+        <form action="upload" name="upload_form" id="upload_form" target="frame1" method="post" enctype="multipart/form-data">
+            <div align="center"><font size="5"> <strong>上传本地文件</strong></font></div>
+<br/>
+            <input type="file" id="file" name="file">
+            <input type="submit" onclick="upload()" value="上传">
+        </form>
+    </div>
+    <div align="center">
+        <iframe name="frame1"  frameborder="0" height="50"></iframe>
+    </div>
+<br/>
+<br/>
+    <div align="center"><font size="5"> <strong>刷新页面</strong></font></div>
+<br/>
+    <div align="center">
+        <button type="submit" onclick="flush()">刷新</button>
+    </div>
+<br/>
+    <div align="center"><font size="5"> <strong>目录</strong></font></div>
+<br/>
+        <div class="login">
+            <div align="center">
+                <a href="https://192.168.3.134:12345/login/zjddddd/demo-m3u8">demo-m3u8</button>
+            </div>
+            <div align="center">
+                <a href="https://192.168.3.134:12345/login/zjddddd/big_file.html">big_file.html</button>
+            </div>
+            <div align="center">
+                <a href="https://192.168.3.134:12345/login/zjddddd/111.txt">111.txt</button>
+            </div>
+            <div align="center">
+                <a href="https://192.168.3.134:12345/login/zjddddd/test.txt">test.txt</button>
+            </div>
+            <div align="center">
+                <a href="https://192.168.3.134:12345/login/zjddddd/aaa.html">aaa.html</button>
+            </div>
+            <div align="center">
+                <a href="https://192.168.3.134:12345/login/zjddddd/dir.html">dir.html</button>
+            </div>
+            <div align="center">
+                <a href="https://192.168.3.134:12345/login/zjddddd/meinv-m3u8">meinv-m3u8</button>
+            </div>
+        </div>
+    </body>
+    <script>
+        function flush()
+        {
+            window.location.href = location.href
+        }
+        function upload()
+        {
+            $("#upload_form").submit();
+            var t = setInterval(function() {
+                var word = $("iframe[name='frame1']").contents().find("body").text();
+                if (word != "") {
+                    alert(word);
+                    clearInterval(t);
+                }
+            }, 1000);
+        }
+    </script>
+</html>

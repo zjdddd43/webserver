@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign in</title>
+    </head>
+    <body>
+<br/>
+<br/>
+    <div align="center"><font size="5"> <strong>登录</strong></font></div>
+    <br/>
+        <div class="login">
+                <form name="login_form" method="post">
+                        <div align="center"><input type="text" name="user" placeholder="用户名" required="required"></div><br/>
+                        <div align="center"><input type="password" name="password" placeholder="登录密码" required="required"></div><br/>
+                        <div align="center">
+                            <button type="submit" onclick="set_action_name()">确定</button>
+                            <a href="https://192.168.3.134:12345/register.html">注册账号</button>
+                        </div>
+                </form>
+        </div>
+    </body>
+    <script>
+        function set_action_name()
+        {
+            document.getElementsByName('login_form')[0].action="/login/"+document.getElementsByName('user')[0].value;
+        }
+    </script>
+
+</html>
+
