@@ -1,5 +1,7 @@
 ## WebServer
 
+基于游双的Linux高性能服务器一书中的web服务器进行开发
+
 ### 实现功能： 
 
 • 基于线程池、非阻塞 socket、epoll（ET 模式）、模拟 Proactor 的并发模型。 
